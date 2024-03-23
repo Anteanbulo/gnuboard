@@ -20,13 +20,13 @@ add_javascript('<script src="'.G5_THEME_JS_URL.'/unslider.min.js"></script>', 10
                 <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/banner2.jpeg" alt="메인베너" /></a></div>
             </li>
             <li class="bn_bg1">
-                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/main_banner.png" alt="메인베너" /></a></div>
+                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/banner2.jpeg" alt="메인베너" /></a></div>
             </li>
             <li class="bn_bg1">
-                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/main_banner.png" alt="메인베너" /></a></div>
+                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/banner2.jpeg" alt="메인베너" /></a></div>
             </li>
             <li class="bn_bg1">
-                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/main_banner.png" alt="메인베너" /></a></div>
+                <div class="bn_wr"><a href="#none"><img src="<?php echo G5_THEME_IMG_URL ?>/banner2.jpeq" alt="메인베너" /></a></div>
             </li>
         </ul>
     </div>
