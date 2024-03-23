@@ -151,7 +151,7 @@ include_once(G5_THEME_LIB_PATH.'/new_lastest.lib.php');
 	        <div class="short_cut">
 	            <ul>
 	                <li class="f_short_cut"><strong><a href="http://43.200.164.149/bbs/board.php?bo_table=gallery">정보를 수정해볼까?</a></strong></li>
-	                <li><strong><a href="https://www.naver.com/">바로가기 싫어</a></strong></li>
+	                <li><strong><a href="https://www.naver.com/">바로가기 싫</a></strong></li>
 	                <li><strong><a href="#">뭘봐</a></strong></li>
 	            </ul>
 	        </div>
