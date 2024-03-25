@@ -17,7 +17,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <!-- 상단 시작 { -->
 <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
-  
+
 <!-- 사이드 메뉴 -->
 <button id="menu-toggle" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars fa-lg" aria-hidden="true" title="Toggle navigation"></i><span class="sound_only">사이드메뉴 열기</span></button>
 <nav id="sidebar-wrapper">
@@ -59,8 +59,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <header id="top" class="header">
     <div class="text-vertical-center">
-    	<h1><a href="<?php echo G5_URL ?>">PORTFOLIO</a></h1>
-        <h3 class="font-fam">Gnuboard5 &amp; bootstrap</h3>
+    	<h1><a href="<?php echo G5_URL ?>">Anteambulo의 마케팅 회사</a></h1>
+        <h3 class="font-fam">당신의 가치를 높여주는 마케팅</h3>
     </div>
     <?php
     if(defined('_INDEX_')) { // index에서만 실행
@@ -86,10 +86,10 @@ $("#menu-toggle").click(function(e) {
 // Scrolls to the selected menu item on the page
 $(function() {
     var is_moving = false;
- 
+
     $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-            
+
             is_moving = true;
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -105,13 +105,13 @@ $(function() {
             }
         }
     });
- 
+
     $(document).on("scroll", onScroll);
- 
+
     function onScroll(event){
- 
+
         if( is_moving ) return;
- 
+
         var scrollPos = $(document).scrollTop();
         $('a[href*=#]:not([href=#])').each(function () {
             var currLink = $(this),
@@ -131,7 +131,7 @@ $(function() {
 });
 
 // 사이드 페이지네이션
-$(function(){                 
+$(function(){
     $("#page_nat li a").click(function(){
         $("#page_nat li a").removeClass("on");
         $(this).addClass("on");

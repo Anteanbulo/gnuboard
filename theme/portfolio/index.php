@@ -12,9 +12,6 @@ include_once(G5_THEME_PATH.'/head.php');
 <ul id="page_nat">
     <li><a href="#about" class="on"><span class="sound_only">about 이동</span></a></li>
     <li><a href="#resume"><span class="sound_only">resume 이동</span></a></li>
-    <li><a href="#skills"><span class="sound_only">skills 이동</span></a></li>
-    <li><a href="#news"><span class="sound_only">news 이동</span></a></li>
-    <li><a href="#work"><span class="sound_only">work 이동</span></a></li>
     <li><a href="#contact"><span class="sound_only">contact 이동</span></a></li>
 </ul>
 
@@ -23,7 +20,7 @@ include_once(G5_THEME_PATH.'/head.php');
         <div class="row justify-content-center text-center">
             <div class="col-xl-8 col-lg-9">
                 <h2 class="display-4 mx-xl-6 text-center">ABOUT</h2>
-                <p class="lead">안녕하세요 ○○○ 입니다.</p>
+                <p class="lead">Anteanbolu의 차별화된 마케팅</p>
 			</div>
 		</div>
 		<div class="row">
@@ -40,10 +37,10 @@ include_once(G5_THEME_PATH.'/head.php');
                 if (trim($str) == '') {
                     $i++;
                 }
-                $about[$i] = $str.'<br>'; 
+                $about[$i] = $str.'<br>';
             }
             ?>
-        
+
             <div class="col-md-4 col-lg-4 pofile_img" data-aos="fade-up" data-aos-duration="2000">
                 <p class="my_profile_img text-center"><span><img src="<?php echo G5_THEME_IMG_URL ?>/face.png" alt="나의 프로필 사진" /></span></p>
                 <p class="lead"><?php echo $about[0]; ?></p><!-- 1단 -->
@@ -55,13 +52,9 @@ include_once(G5_THEME_PATH.'/head.php');
                 <p class="lead"><?php echo $about[2]; ?></p><!-- 3단 -->
             </div>
 		</div>
-    </div>	
-</section>
-
-<section id="bg1" class="bg1">
-    <div class="container">
     </div>
 </section>
+
 
 <section id="resume" class="resume">
     <div class="container">
@@ -91,7 +84,7 @@ include_once(G5_THEME_PATH.'/head.php');
             $experience = explode("\n", $resume[2]);
             ?>
             <dl class="col-md-4 col-lg-4 aos-init aos-animate re_edu text-center" data-aos="fade-up" data-aos-delay="100">
-                <dt>Education</dt>
+                <dt>소통의 게시판</dt>
                 <?php
                 foreach($education as $str){
                     echo '<dd>'.$str.'</dd>';
@@ -99,7 +92,7 @@ include_once(G5_THEME_PATH.'/head.php');
                 ?>
             </dl>
             <dl class="col-md-4 col-lg-4 aos-init aos-animate re_lic text-center" data-aos="fade-up" data-aos-delay="100">
-                <dt>License</dt>
+                <dt>자격증</dt>
                 <?php
                 foreach($license as $str){
                     echo '<dd>'.$str.'</dd>';
@@ -107,7 +100,7 @@ include_once(G5_THEME_PATH.'/head.php');
                 ?>
             </dl>
             <dl class="col-md-4 col-lg-4 aos-init aos-animate re_exp text-center" data-aos="fade-up" data-aos-delay="100">
-                <dt>Experience</dt>
+                <dt>경험공유,오류게시판</dt>
                 <?php
                 foreach($experience as $str){
                     echo '<dd>'.$str.'</dd>';
@@ -117,73 +110,9 @@ include_once(G5_THEME_PATH.'/head.php');
         </div>
     </div>
 </section>
-        
-<section id="skills" class="skills">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-xl-8 col-lg-9">
-                <h2 class="display-4 mx-xl-6">SKILLS</h2>
-                <p class="lead">포트폴리오 테마 기술 능력입니다.</p>
-			</div>
-        </div>
-        <div class="row">
-        <?php
-        $sql = " select * from ".G5_WRITE_PORTFOLIO_TABLE." where wr_subject = 'SKILLS' ";
-        $row = sql_fetch($sql);
-        $arr = explode("\n", $row['wr_content']);
-        foreach($arr as $str){
-            list($title, $percent) = explode(':', $str);
-            echo "<div class=\"col-sm-6 col-md-4 col-lg-2 circle text-center aos-init aos-animate\" data-aos=\"fade-up\" data-aos-delay=\"100\">
-                <div class=\"percent\">
-                    <p>{$percent}%</p>
-                </div>
-                <canvas></canvas>
-                <h4 class=\"font-fam\">{$title}</h4> 
-            </div>\n";
-        }
-        ?>
-		</div>
-    </div>
-</section>
 
-<section id="news" class="news">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-xl-8 col-lg-9">
-                <h2 class="display-4 mx-xl-6"><a href="<?php echo get_pretty_url('news'); ?>">NEWS</a></h2>
-                <p class="lead">포트폴리오 테마 소식입니다.</p>
-			</div>
-        </div>
-        <?php echo latest('theme/basic', 'news', 6, 25); ?>
-    </div>
-</section>
 
-<section id="work" class="work">
-	<div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-xl-8 col-lg-9">
-                <h2 class="display-4 mx-xl-6"><a href="<?php echo get_pretty_url('works'); ?>">WORKS</a></h2>
-                <p class="lead">포트폴리오 테마 갤러리 작업물입니다.</p>
-			</div>
-        </div>
-	</div>
-    <?php
-    // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-    // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-    // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-    $options = array(
-        'thumb_width'    => 580, // 썸네일 width
-        'thumb_height'   => 380,  // 썸네일 height
-        'content_length' => 0   // 간단내용 길이
-    );
-    echo latest('theme/gallery', 'works', 9, 25, 1, $options);
-    ?>
-</section>
 
-<section id="bg2" class="bg2">
-    <div class="container">
-    </div>
-</section>
 
 <section id="contact" class="contact">
     <div class="container">
@@ -196,7 +125,7 @@ include_once(G5_THEME_PATH.'/head.php');
         <div id="contact_from" data-aos="flip-left" class="container">
             <form name="fcontact" action="<?php echo G5_THEME_URL; ?>/contact_send.php" method="post" onsubmit="return fcontact_submit(this);">
                 <fieldset id="contact_fs">
-                    <legend>Contact</legend>             
+                    <legend>Contact</legend>
                     <p>
                         <label for="con_name">이름</label>
                         <input type="text" name="con_name" id="con_name" required class="frm_input required" minlength="2" maxlength="100" placeholder=" 보내실 분의 이름을 입력해 주세요.">
@@ -223,7 +152,7 @@ include_once(G5_THEME_PATH.'/head.php');
     </div>
 </section>
 
-<script>  
+<script>
     //skill
     $(function () {
         $('.percent').percentageLoader({
@@ -235,7 +164,7 @@ include_once(G5_THEME_PATH.'/head.php');
             fontSize: '16px',
             fontWeight: 'normal'
         });
-    
+
     });
 
     $(function() {
@@ -257,7 +186,7 @@ include_once(G5_THEME_PATH.'/head.php');
 
         return true;
     }
-    
+
 
 	AOS.init();
 </script>
